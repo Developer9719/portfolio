@@ -1,5 +1,5 @@
 import { basicElementStructures } from "./structure.js";
-//import '../style/customLayout.css';
+import '../styles/customLayout.css';
 
 export function customHTMLLayout() {
     /** Layout
@@ -25,7 +25,22 @@ export function customHTMLLayout() {
     new basicElementStructures(topSection, '.mainContent');
 
     for (let i=0; i < 3; i++) {
-        let gridColumn = basicElementStructures.div(undefined, ['gridColumn']);
+        let className = 'gridColumn_' + i;
+        let content;
+
+        if (className === 'gridColumn_0') {
+            content = 'Hi, I\'m Justin! ';
+        } else if (className === 'gridColumn_1') {
+            const selfie = basicElementStructures.image('../assets/selfie_circle.png', 'Picture of Me', 'selfieImage');
+            new basicElementStructures(selfie, '.gridColumn_0');
+            content = '';
+        } else if (className === 'gridColumn_2') {
+            content = 'It\s me again!';
+        } else {
+            alert('Class name not found.');
+        }
+
+        let gridColumn = basicElementStructures.div(content, [className]);
         new basicElementStructures(gridColumn, '.topSection');
     }
 }

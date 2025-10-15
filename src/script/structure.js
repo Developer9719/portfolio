@@ -75,6 +75,15 @@ export class basicElementStructures {
         }
     }
 
+    static image(imageLocation, altText, classList) {
+        return {
+            tag: 'a',
+            href: imageLocation,
+            altText: altText,
+            classes: [classList]
+        }
+    }
+
     static siteHeader(title) {
         return {
             tag: 'header',
