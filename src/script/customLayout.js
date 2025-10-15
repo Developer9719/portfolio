@@ -1,4 +1,4 @@
-import basicElementStructures from "./structure.js";
+import { basicElementStructures } from "./structure.js";
 //import '../style/customLayout.css';
 
 export function customHTMLLayout() {
@@ -20,5 +20,12 @@ export function customHTMLLayout() {
      *   - Upwork
      *   - Fiverr
      */
-    
+    // Top Section
+    const topSection = basicElementStructures.div(undefined, ['topSection']);
+    new basicElementStructures(topSection, '.mainContent');
+
+    for (let i=0; i < 3; i++) {
+        let gridColumn = basicElementStructures.div(undefined, ['gridColumn']);
+        new basicElementStructures(gridColumn, '.topSection');
+    }
 }
