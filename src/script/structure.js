@@ -1,5 +1,6 @@
 import { siteTitle, pageTitle } from "./index.js";
 import '../styles/structure.css';
+import { customHTMLLayout } from "./customLayout.js";
 
 // Basic Element Structure
 /**
@@ -106,10 +107,11 @@ export function customizedHTML() {
     const header = basicElementStructures.siteHeader(`${siteTitle}`);
     new basicElementStructures(header, 'body');
 
-    const div = basicElementStructures.div('Test Content', ['mainContent']);
+    const div = basicElementStructures.div(undefined, ['mainContent']);
     new basicElementStructures(div, 'body');
 
     /* Customized Content */
+    customHTMLLayout();
 
     /* Basic Footer */
     content = `&copy 2025 - ${siteTitle}`;
