@@ -44,3 +44,9 @@ export function customHTMLLayout() {
     new basicElementStructures(leftSideContent, '.gridColumn_0');
     new basicElementStructures(rightSideContent, '.gridColumn_2');
 }
+
+
+/** Issues to Fix:
+ * - 404 Error on Image
+ *   - Path is correct
+ */
