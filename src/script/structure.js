@@ -67,6 +67,15 @@ export class basicElementStructures {
     }
 
     // Element Blueprints
+
+    static p(content, classList) {
+        return {
+            tag: 'p',
+            content: content,
+            classes: [classList]
+        }
+    }
+    
     static div(content, classList) {
         return {
             tag: 'div',
@@ -77,9 +86,8 @@ export class basicElementStructures {
 
     static image(imageLocation, altText, classList) {
         return {
-            tag: 'a',
-            href: imageLocation,
-            altText: altText,
+            tag: 'img',
+            attributes: { src: imageLocation, alt: altText },
             classes: [classList]
         }
     }
@@ -123,7 +131,9 @@ export function customizedHTML() {
     customHTMLLayout();
 
     /* Basic Footer */
-    content = `&copy 2025 - ${siteTitle}`;
+    /*
+    content = '&copy 2025 - ' . siteTitle;
     const footer = basicElementStructures.footer(content);
     new basicElementStructures(footer, 'body');
+    */
 }

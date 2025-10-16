@@ -28,19 +28,19 @@ export function customHTMLLayout() {
         let className = 'gridColumn_' + i;
         let content;
 
-        if (className === 'gridColumn_0') {
-            content = 'Hi, I\'m Justin! ';
-        } else if (className === 'gridColumn_1') {
-            const selfie = basicElementStructures.image('../assets/selfie_circle.png', 'Picture of Me', 'selfieImage');
-            new basicElementStructures(selfie, '.gridColumn_0');
-            content = '';
-        } else if (className === 'gridColumn_2') {
-            content = 'It\s me again!';
-        } else {
-            alert('Class name not found.');
-        }
-
         let gridColumn = basicElementStructures.div(content, [className]);
         new basicElementStructures(gridColumn, '.topSection');
     }
+
+    const selfieImage = basicElementStructures.image('../assets/selfieImage.jpg', 'Photo of Me', ['selfieImage']);
+    new basicElementStructures(selfieImage, '.gridColumn_1');
+
+    let content = "Hello I am Justin and I am a web developer.";
+    const leftSideContent = basicElementStructures.p(content, ['topSectionParagraph']);
+
+    content = "I have a Web Development Diploma from Georgian College and I am currently working through The Odin Project to further enhance my skills.";
+    const rightSideContent = basicElementStructures.p(content, ['topSectionParagraph']);
+
+    new basicElementStructures(leftSideContent, '.gridColumn_0');
+    new basicElementStructures(rightSideContent, '.gridColumn_2');
 }
